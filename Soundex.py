@@ -27,7 +27,7 @@ def check_code_state(code, prev_code):
     return code != "0" and code != prev_code
 
 
-def process_chararacter(char, soundex, prev_code):
+def process_character(char, soundex, prev_code):
     code = get_soundex_code(char)
     if check_code_state(code, prev_code):
         soundex += code
@@ -37,7 +37,7 @@ def process_chararacter(char, soundex, prev_code):
 
 def encode_name(name, soundex, prev_code):
     for char in name[1:]:
-        soundex, prev_code = process_char(char, soundex, prev_code)
+        soundex, prev_code = process_character(char, soundex, prev_code)
         if len(soundex) == 4:
             break
     # Pad with zeros if necessary
