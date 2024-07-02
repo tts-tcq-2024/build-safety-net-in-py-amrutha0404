@@ -1,5 +1,6 @@
 import unittest
 from Soundex import generate_soundex
+from Soundex import encode_name
 
 class TestSoundex(unittest.TestCase):
 
@@ -24,7 +25,7 @@ class TestSoundex(unittest.TestCase):
     def test_only_special_character(self):
         self.assertEqual(encode_name("@&%",'@',0),"@000")
 
-     def test_mixed_chars(self):
+    def test_mixed_chars(self):
         self.assertEqual(generate_soundex("Tom&Jerry"), "T526") 
         
 
